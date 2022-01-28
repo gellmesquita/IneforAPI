@@ -13,6 +13,9 @@ class AlunoController{
        const alunos= await knex('aluno').select('*')
        resp.json(alunos)
    }
+  async cursosAlunos(req:Request, resp:Response){
+      const cursos = await knex('aluno-curso').where('')
+  }
 }
 
 export default AlunoController;

@@ -4,10 +4,12 @@ const Route= Router ();
 import ProfessorContrller from './controller/professorController';
 import AlunoController from './controller/alunoController';
 import alunoCursoController from './controller/alunoCursoController';
+import servicoController from './controller/servicoController';
 const ProfessorC = new ProfessorContrller();
 const CursoC = new CursoController();
 const AlunoC = new AlunoController();
 const aluno_curso= new alunoCursoController();
+const ServicoC= new servicoController();
 
 
 Route.post('/criarProfessor', ProfessorC.criarProfessor )
@@ -17,6 +19,8 @@ Route.get('/listarCurso', CursoC.listarCurso )
 Route.get('/listarAluno', AlunoC.listarAluno)
 Route.post('/criarAluno',AlunoC.criarAluno)
 Route.post('/alunoCurso', aluno_curso.inscrever);
+Route.post('/criarServico', ServicoC.criarServico)
+Route.get('/listarServico', ServicoC.listarServico)
 Route.get('/teste', (req:Request, resp:Response)=>{
     resp.render('teste')
 })
