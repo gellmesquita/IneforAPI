@@ -1,0 +1,95 @@
+:root {
+    --BgcolorBlueDefault: #00005a;
+    --colorTextBlueDefault: #00005a;
+    --fullScreen: 100vh;
+    --cursorPointer: pointer;
+    --fontMontsrrat: 'Montserrat', sans-serif; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+body::-webkit-scrollbar {
+width: 6px;
+background:   #fff;
+border-radius: 100px;
+padding: 5px 1px !important;
+transition: 2s;
+}
+
+.msrrt {
+    font-family: var(--fontMontsrrat);
+}
+
+body::-webkit-scrollbar-thumb {
+padding: 5px 1px;
+width: 0px;
+background:#ccc;
+border-radius: 100px;
+border-right: 1px solid transparent;
+border-left: 1px solid transparent;
+transition: 2s;
+border-top: 5px solid transparent;
+border-bottom: 5px solid transparent;
+}
+
+.BgpadraoBlue {
+    background: var(--BgcolorBlueDefault);
+}
+
+.fullScreen {
+    height: var(--fullScreen);
+}
+
+.cp{
+    cursor: var(--cursorPointer);
+}
+
+.textpadraoblue {
+    color: var(--colorTextBlueDefault);
+}
+
+
+.switch {
+    height: 40px;
+}
+
+.cont .outer {
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.outer #form {
+    width: 200%;
+    position: relative;
+    display: flex;
+    margin: auto;
+    transition: 0.2s ease-in-out;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+#page1 {
+    /* margin:56px 0 0; */
+    width: 100%;
+}
+#page2 {
+    margin: auto;
+    width: 100%;
+}
+
+.element svg {
+    position: absolute;
+    left: 23px;
+    top: 13px;
+    font-size: 17px;
+}
+
+
+#btn:active{
+transform: scale(1.01);
+}

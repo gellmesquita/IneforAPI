@@ -22,7 +22,7 @@ Route.post('/alunoCurso', aluno_curso.inscrever);
 Route.post('/criarServico', ServicoC.criarServico)
 Route.get('/listarServico', ServicoC.listarServico)
 Route.get('/', (req:Request, resp:Response)=>{
-    resp.render('teste')
+    resp.render('index')
 })
 
 
