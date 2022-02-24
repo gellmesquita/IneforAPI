@@ -16,6 +16,10 @@ class AlunoController{
   async cursosAlunos(req:Request, resp:Response){
     const cursos = await knex('aluno-curso').where('')
   }
+  async alunoPainel(req:Request, resp:Response){
+    resp.render('./aluno/alunoPainel.ejs')
+  }
+  
 }
 
 export default AlunoController;

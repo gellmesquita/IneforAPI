@@ -21,6 +21,10 @@ Route.post('/criarAluno',AlunoC.criarAluno)
 Route.post('/alunoCurso', aluno_curso.inscrever);
 Route.post('/criarServico', ServicoC.criarServico)
 Route.get('/listarServico', ServicoC.listarServico)
+
+
+//Rotas Aluno
+Route.get('/AlunoPainel', AlunoC.alunoPainel)
 Route.get('/', (req:Request, resp:Response)=>{
     resp.render('index')
 })
