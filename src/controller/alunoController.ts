@@ -14,7 +14,7 @@ class AlunoController{
        resp.json(alunos)
    }
   async cursosAlunos(req:Request, resp:Response){
-      const cursos = await knex('aluno-curso').where('')
+    const cursos = await knex('aluno-curso').where('')
   }
 }
 
