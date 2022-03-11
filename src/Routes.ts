@@ -10,14 +10,18 @@ const CursoC = new CursoController();
 const AlunoC = new AlunoController();
 const aluno_curso= new alunoCursoController();
 const ServicoC= new servicoController();
+import bodyParser from "body-parser";
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 Route.post('/criarProfessor', ProfessorC.criarProfessor )
 Route.get('/listarProfessor', ProfessorC.listarProfessor)
+
 Route.post('/criarCurso',CursoC.criarCurso)
 Route.get('/listarCurso', CursoC.listarCurso )
 Route.get('/listarAluno', AlunoC.listarAluno)
-Route.post('/criarAluno',AlunoC.criarAluno)
+Route.post('/criarAluno',urlencodedParser,AlunoC.criarAluno)
+
 Route.post('/alunoCurso', aluno_curso.inscrever);
 Route.post('/criarServico', ServicoC.criarServico)
 Route.get('/listarServico', ServicoC.listarServico)
