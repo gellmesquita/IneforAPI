@@ -13,6 +13,8 @@ const ServicoC= new servicoController();
 import bodyParser from "body-parser";
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+import {alunoAuth} from './middlewre/aluno'
+
 
 Route.post('/criarProfessor', ProfessorC.criarProfessor )
 Route.get('/listarProfessor', ProfessorC.listarProfessor)
@@ -21,6 +23,7 @@ Route.post('/criarCurso',CursoC.criarCurso)
 Route.get('/listarCurso', CursoC.listarCurso )
 Route.get('/listarAluno', AlunoC.listarAluno)
 Route.post('/criarAluno',urlencodedParser,AlunoC.criarAluno)
+Route.post('/login',urlencodedParser,AlunoC.loginAluno)
 
 Route.post('/alunoCurso', aluno_curso.inscrever);
 Route.post('/criarServico', ServicoC.criarServico)
@@ -28,9 +31,13 @@ Route.get('/listarServico', ServicoC.listarServico)
 
 
 //Rotas Aluno
-Route.get('/AlunoPainel', AlunoC.alunoPainel)
+Route.get('/AlunoPainel',alunoAuth, AlunoC.alunoPainel)
+
 Route.get('/', (req:Request, resp:Response)=>{
     resp.render('index')
+})
+Route.get('/home', (req:Request, resp:Response)=>{
+    resp.render('Home')
 })
 
 
